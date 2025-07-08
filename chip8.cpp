@@ -22,3 +22,12 @@ void Chip8::LoadROM(const char *filename) {
         delete[] buffer;
     }
 }
+
+
+    Chip8::Chip8() {
+    pc = START_ADDRESS;
+
+    for (int i = 0; i < FONTSET_SIZE; i++) {
+        memory[FONTSET_START_ADDRESS + i] = fontset[i];
+    }
+}
